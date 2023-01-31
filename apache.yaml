@@ -1,0 +1,9 @@
+---
+- name: installing apache
+  become: yes
+  hosts: all
+  tasks: 
+    - name: installing apache on ubuntu
+      ansible.builtin.apt:
+        name: apache2
+        state: present
