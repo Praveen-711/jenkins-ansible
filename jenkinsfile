@@ -3,13 +3,13 @@ pipeline{
     stages{
         stage('vcs'){
             steps{
-                url: 'https://github.com/Praveen-711/jenkins-ansible.git'
+                url: 'https://github.com/Praveen-711/jenkins-ansible.git',
                 branch: 'master'
             }
         }
         stage('ansible'){
             steps{
-                sh ansible-playbook -i hosts apache.yaml
+                sh 'ansible-playbook -i hosts apache.yaml'
             }
         }
     }
